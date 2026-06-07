@@ -6,26 +6,26 @@ function Login(){
   //로그인 상태면 메인페이지로
   const navigate = useNavigate()
 
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  useEffect(() => {// 로그인 상태면 메인으로
-    const checkUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
+  // useEffect(() => {// 로그인 상태면 메인으로
+  //   const checkUser = async () => {
+  //     const { data: { user } } = await supabase.auth.getUser()
 
-      if (user) {
-        navigate('/')
-        return
-      }
+  //     if (user) {
+  //       navigate('/')
+  //       return
+  //     }
 
-      setLoading(false)
-    }
+  //     setLoading(false)
+  //   }
 
-    checkUser()
-  }, [])
-  if (loading) return null
+  //   checkUser()
+  // }, [])
+  // if (loading) return null
 
   const handleLogin = async (e) => {
   e.preventDefault()

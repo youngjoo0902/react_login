@@ -1,7 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Line+Seed+KR:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gana+Chocolate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
 #wrapper    {width:100%; height:100%;}
-#header     {width:100%; border-bottom:1px solid #eee; text-align:center;}
-#header h1  {padding:20px 0;}
-#header h1 a   {background:url('favicon.svg') no-repeat left center; font-size:24px; display:inline-block; width:48px; height:46px;}
+#header     {position:relative; width:100%; height:70px; border-bottom:1px solid #eee;}
+#header h1  {position:absolute; top:15px; left:20px;}
+#header h1 a   {background:url('../images/logo.png') no-repeat 0 0 / 100% auto; font-size:24px; display:inline-block; width:40px; height:40px;}
+#header .title  {text-align:center; font:normal 400 35px/2.1'Dongle', 'Gana Chocolate', 'Line Seed KR', sans-serif; color:#333;}
+#header .title a {color:#333; font:inherit;}
+#body   {height:calc(100vh - 129px); padding:20px;}
+
+.nav .menu  {position:absolute; top:50%; right:15px; width:40px; height:40px; background:transparent; z-index:2; transform:translateY(-50%); transform-origin:top right;}
+.nav .menu::before  {position:absolute; content:""; top:20px; left:50%; width:calc(100% - 20px); height:2px; background:#000; transform:translate(-50%, -50%); transition:opacity 0.5s;}
+.nav .menu span{width:100%; height:100%; display:block; transition:all 0.5s;}
+.nav .menu span::before{position:absolute; content:""; top:10px; left:50%; width:calc(100% - 20px); height:2px; background:#000; transform:translate(-50%, -50%); transition:all 0.5s;}
+.nav .menu span::after{position:absolute; content:""; top:30px; left:50%; width:calc(100% - 20px); height:2px; background:#000; transform:translate(-50%, -50%); transition:all 0.5s;}
+.nav .menu_list{position:fixed; top:0; right:0; width:0; height:100vh; background:#fff; transition:width 0.5s; overflow:hidden; z-index:1;}
+.nav .menu_list ul{border-top:1px solid #222; height:calc(100vh - 40px); overflow-y:auto; margin:70px 10px 0;}
+.nav .menu_list ul li{border-bottom:1px solid #222;}
+.nav .menu_list ul li a {display:block; padding:10px; color:#333;}
+.nav.on .menu_list{width:200px;}
+.nav.on .menu::before {opacity:0;}
+.nav.on .menu span::before {width:calc(100% - 10px); top:20px; left:20px; transform:translate(-50%, -50%) rotate(45deg);}
+.nav.on .menu span::after {width:calc(100% - 10px); top:20px; left:20px; transform:translate(-50%, -50%) rotate(-45deg);}
+.nav.on .menu_list::before{position:absolute; top:0; left:0; width:1px; height:100%; background:#eee; content:"";}
+
 .main       {width:100%; padding:40px 0; text-align:center;}
-.username   {color:#36c;}
+.main .login    {color:#36c; text-decoration:underline;}
+.main .logout    {color:#36c; text-decoration:underline;}
+.username   {color:#c733cc;}
 #footer {border-top:1px solid #eee; text-align:center; padding:20px 0;}

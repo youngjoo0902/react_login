@@ -4,28 +4,28 @@ import { useNavigate } from 'react-router-dom'
 
 function Join(){
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  useEffect(() => {// 로그인 상태면 메인으로
-    const checkUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
+  // useEffect(() => {// 로그인 상태면 메인으로
+  //   const checkUser = async () => {
+  //     const { data: { user } } = await supabase.auth.getUser()
 
-      if (user) {
-        navigate('/')
-        return
-      }
+  //     if (user) {
+  //       navigate('/')
+  //       return
+  //     }
 
-      setLoading(false)
-    }
+  //     setLoading(false)
+  //   }
 
-    checkUser()
-  }, [])
-  if (loading) return null
+  //   checkUser()
+  // }, [])
+  // if (loading) return null
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ function Join(){
 
           <div className="input_group">
             <label>비밀번호 확인</label>
-            <input type="password" placeholder="비밀번호 확인" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <input type="password" placeholder="비밀번호를 한번 더 입력하세요" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
           </div>
 
           <button type="submit" className="signup_btn" disabled={password !== confirmPassword}>회원가입</button>

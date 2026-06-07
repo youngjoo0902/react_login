@@ -34,8 +34,8 @@ function Main() {
             <div>메인 페이지 {user && <p className="username">{user.username}님, 안녕하세요.</p>}</div>
             <p>방어로직 하나도 안되어있음. 해킹시도금지~ 해봤자 데이터 없음</p>
             {user
-            ? <button onClick={handleLogout}>로그아웃</button>
-            : <Link to="/login">로그인하세요</Link>
+            ? <button onClick={handleLogout} className="logout">로그아웃</button>
+            : <Link to="/login" className="login">로그인하세요</Link>
             }
         </div>
     )
