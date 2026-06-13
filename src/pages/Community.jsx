@@ -1,11 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { supabase } from "../lib/supabaseClient"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-function Visitor() {
+function Community() {
   // 상태 추가
   const { user } = useAuth();
   const [ posts, setPosts ] = useState([]);
@@ -25,6 +24,7 @@ function Visitor() {
   // 게시글 + 작성자 가져오기
   const fetchPosts = async () => {
     const { data, error } = await supabase.from("guestbook_posts").select(`id, content, created_at, user_id, profiles!inner(username)`).eq("is_deleted", false).order("created_at", { ascending: false });
+    console.log(data);
 
     if (error) {
       console.error(error);
@@ -67,12 +67,9 @@ function Visitor() {
   };
   // 게시글 수정
   const updatePost = async (postId) => {
-    const { error } = await supabase
-      .from("guestbook_posts")
-      .update({
+    const { error } = await supabase.from("guestbook_posts").update({
         content: editingContent
-      })
-      .eq("id", postId);
+      }).eq("id", postId);
 
     if (error) {
       console.error(error);
@@ -163,13 +160,14 @@ function Visitor() {
 
   return (
     <div className="visit">
-      <h2>Visitor</h2>
-      <p>방명록임...</p>
+      <h2>Community</h2>
+      <p>(회원전용 게시판)</p>
       <div className="content">
       {user ?
       <>
         <div className="createText">
-          <textarea value={newPost} onChange={(e) => setNewPost(e.target.value)} onKeyDown={(e) => {if (e.key === "Enter" && e.shiftKey === false) {e.preventDefault(); createPost();}}} placeholder="내용을 입력하세요" />
+          {/* <textarea value={newPost} onChange={(e) => setNewPost(e.target.value)} onKeyDown={(e) => {if (e.key === "Enter" && e.shiftKey === false) {e.preventDefault(); createPost();}}} placeholder="내용을 입력하세요" /> */}
+          <textarea value={newPost} onChange={(e) => setNewPost(e.target.value)} placeholder="내용을 입력하세요" />
         </div>
         <p className="write"><button onClick={createPost} disabled={!newPost.trim()}><span>글작성</span></button></p>
        </>
@@ -196,7 +194,9 @@ function Visitor() {
                 <button className="edit_cancel" onClick={() => setEditingPost(null)}><span>취소</span></button>
                 </>
               ) : (
-                post.content
+                  post.content.split("\n").map((item, i) => {
+                    return <p key={i}>{item}</p>
+                  })
               )}
             </div>
             <div className="replys">
@@ -242,4 +242,4 @@ function Visitor() {
   )
 }
 
-export default Visitor;
+export default Community;

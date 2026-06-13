@@ -45,8 +45,8 @@ function NavBar() {
                 </div>
                 <ul>
                     <li><NavLink to="/about" onClick={toggle}>About</NavLink></li>
-                    <li><NavLink to="/story" onClick={toggle}>Story</NavLink></li>
-                    <li><NavLink to="/visitor" onClick={toggle}>Visitor</NavLink></li>
+                    <li><NavLink to="/community" onClick={toggle}>Community</NavLink></li>
+                    <li><NavLink to="/guest" onClick={toggle}>Guest</NavLink></li>
                 </ul>
             </div>
         </div>

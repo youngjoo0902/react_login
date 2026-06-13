@@ -6,7 +6,8 @@ import About from '../pages/About'
 import Login from '../pages/Login'
 import Join from '../pages/Join'
 import Story from '../pages/Story'
-import Visitor from '../pages/Visitor'
+import Community from '../pages/Community'
+import Guest from '../pages/Guest'
 //import FindId from '../pages/FindId'
 
 function Router() {
@@ -16,7 +17,8 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/story" element={<Story />} />
-        <Route path="/visitor" element={<Visitor />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/guest" element={<Guest />} />
         <Route path="/login" element={<Login />} />
         <Route path="/join" element={<Join />} />
       </Route>

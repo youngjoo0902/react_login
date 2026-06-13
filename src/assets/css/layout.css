@@ -76,13 +76,37 @@
 .visit .content .list > li .replys > ul li .comment .edit_complete{width:50px; height:25px; background:#1a3379; color:#fff; margin-left:5px; font-size:12px; line-height:25px;}
 .visit .content .list > li .replys > ul li .comment .edit_cancel{width:50px; height:25px; background:#666; color:#fff; margin-left:5px; font-size:12px; line-height:25px;}
 .visit .content .list > li .reply  {display:flex; border-top:1px solid #ebebeb; flex-direction:row;}
-.visit .content .list > li .reply input{border:0; width:100%; padding:5px 10px; font-size:12px;}
+.visit .content .list > li .reply input{border:0; width:100%; height:30px; padding:0 10px;}
 .visit .content .list > li .reply input:focus{outline:none;}
-.visit .content .list > li .reply button{width:80px; text-align:center; background:#156673; color:#fff; font-size:12px;}
+.visit .content .list > li .reply button{width:80px; text-align:center; background:#156673; color:#fff;}
 .visit .createText  {border:1px solid #1a3379; margin-top:30px;}
 .visit .createText textarea  {width:100%; min-height:100px; padding:10px; border:0; font-size:12px;}
 .visit .createText textarea:focus{outline:none;}
+.visit .content .guest {margin-top:30px;}
+.visit .content .guest table {width:100%; table-layout:fixed; border-collapse:collapse; background:#eceafb;}
+.visit .content .guest table tbody th{font-weight:400; text-align:center; font-size:13px;}
+.visit .content .guest table tbody td label{display:block; padding:5px 10px;}
+.visit .content .guest table tbody td input{width:100%; border:0; height:30px;}
+.visit .content .guest + .createText    {margin-top:5px;}
+.visit .content .guest_comment {margin-top:5px;}
+.visit .content .guest_comment table {width:100%; table-layout:fixed; border-collapse:collapse; background:#eceafb;}
+.visit .content .guest_comment table tbody th{font-weight:400; text-align:center; font-size:13px;}
+.visit .content .guest_comment table tbody td label{display:block; padding:5px 10px;}
+.visit .content .guest_comment table tbody td input{width:100%; border:0; height:30px;}
 .visit .write  {text-align:right; margin-top:10px;}
 .visit .write button    {display:inline-block; padding:10px 20px; background:#1a3379; color:#fff;}
 .visit .need_login  {color:#0043c3; padding:50px 0 20px; text-align:center;}
+.visit .layer_pw    {position:fixed; top:90px; left:50%; width:250px; background:#fff; border:1px solid #4060b9; margin-left:-125px; text-align:left;}
+.visit .layer_pw .cont  {position:relative; background:#fff; z-index:1; padding:0 0 20px;}
+.visit .layer_pw .cont .title{background:#156673; color:#fff; padding:15px 20px;}
+.visit .layer_pw .cont .close   {position:absolute; top:7px; right:7px; width:30px; height:30px;}
+.visit .layer_pw .cont .close span{width:0; height:0; overflow:hidden; display:block;}
+.visit .layer_pw .cont .close::before{position:absolute; top:50%; left:0; width:30px; height:1px; background:#fff; transform:rotate(45deg); content:'';}
+.visit .layer_pw .cont .close::after{position:absolute; top:50%; left:0; width:30px; height:1px; background:#fff; transform:rotate(-45deg); content:'';}
+.visit .layer_pw::before{position:fixed; top:0; left:0; width:100%; height:100%; content:''; background:rgba(0, 0, 0, 0.5);}
+.visit .layer_pw .txt{margin:0 0 20px;}
+.visit .layer_pw label{display:block; border:1px solid #1a3379; margin:20px;}
+.visit .layer_pw label input{width:100%; border:0; height:30px; text-align:center;}
+.visit .layer_pw .confirm   {text-align:center;}
+.visit .layer_pw .confirm button   {background:#156673; color:#fff; font-size:14px; padding:5px 20px;}
 #footer {border-top:1px solid #eee; text-align:center; padding:20px 0;}
